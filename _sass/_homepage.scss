@@ -1,0 +1,120 @@
+/* ===========================================================================
+   A restrained, academic-style personal homepage
+   ========================================================================== */
+
+$academic-ink: #222;
+$academic-muted: #666;
+$academic-link: #2369a7;
+$academic-rule: #e5e5e5;
+
+body {
+  padding-bottom: 7em;
+  color: $academic-ink;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.masthead {
+  border-bottom: 1px solid $academic-rule;
+  background: #fff;
+
+  &__inner-wrap { max-width: 1060px !important; padding-top: .9em; padding-bottom: .9em; }
+  &__menu-item--lg { display: none; }
+  &__menu-item a { color: #555; font-size: .88em; }
+}
+
+.page--home {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  .page__inner-wrap { width: 100%; }
+  .page__content { padding: 0; }
+}
+
+#main.main--home {
+  max-width: 1100px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.academic-home {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 690px);
+  gap: 70px;
+  max-width: 1010px;
+  margin: 0 auto;
+  padding: 4.5em 1.25em 5em;
+}
+
+.academic-home__sidebar {
+  color: $academic-muted;
+  font-size: .9em;
+  line-height: 1.55;
+
+  h1 { margin: 0 0 .35em; color: $academic-ink; font-size: 1.78em; font-weight: 650; letter-spacing: -.035em; }
+  p { margin: 0 0 1.25em; }
+}
+
+.academic-home__portrait {
+  width: 100%;
+  margin: 0 0 1.25em;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 68%;
+    border-radius: 2px;
+  }
+}
+
+.academic-home__subtitle { color: #444; font-weight: 600; }
+
+.academic-home__links {
+  display: grid;
+  gap: .42em;
+  padding-top: 1.1em;
+  border-top: 1px solid $academic-rule;
+
+  a { color: $academic-link; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}
+
+.academic-home__content {
+  font-size: 1em;
+
+  > p:first-child { margin-top: 0; }
+  p { margin: 0 0 1.15em; }
+  h2 { margin: 2.25em 0 .75em; padding: 0; border: 0; color: #333; font-size: 1.16em; font-weight: 650; letter-spacing: -.015em; }
+  ul { margin: 0; padding-left: 1.15em; }
+  li { margin-bottom: .55em; padding-left: .15em; }
+  a { color: $academic-link; }
+}
+
+.academic-home__timeline {
+  display: grid;
+  gap: .9em;
+
+  > div { display: grid; grid-template-columns: 105px 1fr; gap: 1em; }
+  time { color: $academic-muted; font-size: .9em; }
+  p { margin: 0; }
+  span { color: $academic-muted; }
+  &--compact { gap: .55em; }
+}
+
+.page__footer { border-color: $academic-rule; background: #fff; }
+.page__footer-follow { display: none; }
+.page__footer-copyright { max-width: 1010px; margin: 0 auto; color: #888; }
+
+@media (max-width: 700px) {
+  .masthead__inner-wrap { padding-left: 1.25em; padding-right: 1.25em; }
+  .academic-home { grid-template-columns: 1fr; gap: 2.5em; padding-top: 2.8em; }
+  .academic-home__sidebar { padding-bottom: 1.6em; border-bottom: 1px solid $academic-rule; }
+  .academic-home__links { display: flex; flex-wrap: wrap; gap: .5em 1.1em; }
+  .academic-home__timeline > div { grid-template-columns: 92px 1fr; gap: .7em; }
+}
